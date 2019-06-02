@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Example Vue Component</title>
+	<style>
+	</style>
+</head>
+<body>
+
+	<div id="app">
+		<site-url></site-url>
+		<post-category v-for="category in categories" :category.name="category"></post-category>
+		<posts-block v-for="post in posts" :post="post"></posts-block>
+	</div>
+
+	<script type="text/x-template" id="post-template">
+		<div>
+			<h2>{{ post.title.rendered }}</h2>
+			<div v-html="post.content.rendered"></div>
+		</div>
+	</script>
+
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="js/app.js"></script>
+	
+</body>
+</html>
